@@ -43,3 +43,94 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+#----------------------------------------------
+# Flutter/Dart 관련
+#----------------------------------------------
+
+# 프로젝트 빌드 결과물
+build/
+# pubspec.lock은 보통 버전 고정을 위해 커밋하는 경우도 있으니, 팀 정책에 따라 결정
+# pubspec.lock
+
+# 캐시, 다운로드된 패키지
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+
+# Dart 정의 파일 (생성되는 경우 무시)
+*.dart.js
+*.info.json
+*.js
+*.js.map
+
+# IDE 별 Dart 특정 파일(옵션)
+analysis_options.yaml
+*.iml
+
+#----------------------------------------------
+# iOS 관련 (macOS 환경)
+#----------------------------------------------
+
+# Cocoapods 캐시 및 빌드 산출물
+Pods/
+Podfile.lock
+ios/Flutter/.last_build_id
+ios/.generated
+ios/Flutter/Flutter.podspec
+
+# Xcode 빌드 결과물
+*.xcworkspace
+*.xcuserstate
+*.xcuserdata
+
+# Xcode 중간 파일
+DerivedData/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# 기타
+*.mode1v3
+*.mode2v3
+*.pbxuser
+
+#----------------------------------------------
+# Android 관련
+#----------------------------------------------
+/android/.gradle
+/android/.idea
+/android/app/debug.keystore
+/android/local.properties
+*.jks
+*.keystore
+
+#----------------------------------------------
+# macOS 관련
+#----------------------------------------------
+# macOS에서 자동 생성되는 메타파일
+.DS_Store
+.Spotlight-V100
+.Trashes
+.DS_Store?
+._*
+
+#----------------------------------------------
+# VSCode / IntelliJ / 기타 IDE 설정
+#----------------------------------------------
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+#----------------------------------------------
+# 기타 (로그, 임시 파일 등)
+#----------------------------------------------
+*.log
+*.tmp
+*.temp
+*.swp
+*.lock
