@@ -1,16 +1,90 @@
-# flutter_kakaotalk_clone
+# KakaoTalk Clone Chat App
 
-A new Flutter project.
+> **Flutter**를 이용해 **카카오톡과 유사한 UI/UX**를 구현한 **채팅 앱** 예제 프로젝트입니다. 실시간 채팅, 친구 목록, 설정 페이지 등 간단한 기능을 예시로 담았으며, Firebase/소켓 서버 등을 통해 확장 가능합니다.
+> 해당 프로젝트는 개인 스터디를 위한 포트폴리오 목적입니다. 이를 참고해주세요
 
-## Getting Started
+## 데모 화면
+| 메인(채팅목록) | 채팅방 | 친구목록 |
+|:---:|:---:|:---:|
+| (예시 스크린샷 TODO) | (예시 스크린샷 TODO) | (예시 스크린샷 TODO) |
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## 주요 기능
+1. **채팅 목록**  
+   - 각 채팅방별 마지막 메시지, 최근 대화 시간 표시
+   - 채팅방을 탭하면 해당 채팅방으로 이동
+2. **채팅방**  
+   - 기본적인 메시지 전송/표시
+   - 보낸 메시지(내 메시지)와 받은 메시지(상대 메시지)를 구분하는 버블 UI
+   - 상단바에서 통화, 옵션 등을 추가 구현 가능
+3. **친구 목록**  
+   - 사용자 프로필 + 친구 리스트 표시
+   - 친구 목록에서 프로필, 채팅 시작, 친구 추가 기능 확장 가능
+4. **더보기/설정 페이지**  
+   - 알림 설정, 채팅 테마 변경, 로그아웃 등(예시)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 폴더 구조 예시
+
+```
+lib/
+  ├─ main.dart           // 앱 실행의 시작점 (Firebase 초기화 등)
+  ├─ home_page.dart      // 하단 탭바를 포함한 메인 페이지
+  ├─ chat_list_page.dart // 채팅 목록
+  ├─ chat_room_page.dart // 채팅방 화면
+  ├─ friend_list_page.dart // 친구 목록
+  ├─ settings_page.dart  // 더보기/설정 페이지
+  └─ ... (추가 상태관리, 위젯, 서비스 등)
+```
+
+- **`main.dart`**  
+  Flutter 엔트리 포인트이며, Firebase 초기화나 전역 상태관리를 위한 Provider, Riverpod 등을 설정할 수 있습니다.
+- **`home_page.dart`**  
+  하단 `BottomNavigationBar`를 통해 채팅/친구/설정 등 페이지 전환을 담당합니다.
+- **`chat_list_page.dart`**  
+  채팅방 목록 화면. `ListView.builder`로 채팅방 아이템들을 나열합니다.
+- **`chat_room_page.dart`**  
+  실시간 메시지 송수신 및 UI 표시. Firebase나 소켓 서버와 연동할 수 있습니다.
+- **`friend_list_page.dart`**  
+  친구 목록 화면. 사용자 본인 프로필과 친구목록을 나열합니다.
+- **`settings_page.dart`**  
+  더보기/설정 페이지. 알림, 테마, 로그아웃 등 메뉴를 구성할 수 있습니다.
+
+---
+
+## 확장 아이디어
+
+- **Firebase Auth**를 통한 회원가입/로그인 기능  
+- **Firebase Cloud Messaging(FCM)**으로 푸시 알림  
+- **그룹 채팅**, **사진/파일 전송**, **메시지 읽음 표시** 기능 추가  
+- **Custom Theme**: 카카오톡의 노란색(#FEE500)을 메인 테마로 적용  
+- **모바일/웹 동시 대응**: Flutter Web 환경에 맞춰 반응형 레이아웃 처리  
+- **디자인/UX 디테일**: BottomSheet, 애니메이션, GestureDetector 등을 활용해 카카오톡 느낌 극대화
+
+---
+
+## 스크린샷/동영상
+
+> TODO
+
+---
+
+## 기여 방법
+
+1. 이 레포지토리를 포크(Fork)합니다.
+2. 브랜치를 생성하여(예: `feature/new-chat-ui`) 코드를 수정합니다.
+3. 변경사항을 커밋하고 푸시합니다.
+4. Pull Request를 생성하여 변경사항을 제안합니다.
+
+---
+
+## 문의
+
+- Email: mgee044@naver.com
+- GitHub Issue를 통해 질문 및 제안을 남겨주세요.
+
+---
+
+> **Note**: 이 프로젝트는 카카오톡의 UI/UX를 모방하여 학습/포트폴리오 목적으로 제작된 예시이며, 실제 카카오톡 상표 및 저작권과는 무관합니다.  
