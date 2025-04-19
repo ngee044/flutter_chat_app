@@ -1,136 +1,66 @@
-# Miscellaneous
-*.class
-*.log
-*.pyc
-*.swp
-.DS_Store
-.atom/
-.build/
-.buildlog/
-.history
-.svn/
-.swiftpm/
-migrate_working_dir/
-
-# IntelliJ related
-*.iml
-*.ipr
-*.iws
-.idea/
-
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
-
-# Flutter/Dart/Pub related
-**/doc/api/
-**/ios/Flutter/.last_build_id
-.dart_tool/
-.flutter-plugins
-.flutter-plugins-dependencies
-.pub-cache/
-.pub/
-/build/
-
-# Symbolication related
-app.*.symbols
-
-# Obfuscation related
-app.*.map.json
-
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
-
-#----------------------------------------------
-# Flutter/Dart 관련
-#----------------------------------------------
-
-# 프로젝트 빌드 결과물
+# ─────────────────────────────────────────────────────────────
+#  Flutter 기본 빌드 / 캐시
+# ─────────────────────────────────────────────────────────────
 build/
-# pubspec.lock은 보통 버전 고정을 위해 커밋하는 경우도 있으니, 팀 정책에 따라 결정
-# pubspec.lock
-
-# 캐시, 다운로드된 패키지
 .dart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
 .packages
 .pub-cache/
+test/**/.tmp/
 
-# Dart 정의 파일 (생성되는 경우 무시)
-*.dart.js
-*.info.json
-*.js
-*.js.map
-
-# IDE 별 Dart 특정 파일(옵션)
-analysis_options.yaml
-*.iml
-
-#----------------------------------------------
-# iOS 관련 (macOS 환경)
-#----------------------------------------------
-
-# Cocoapods 캐시 및 빌드 산출물
+# ─────────────────────────────────────────────────────────────
+#  iOS / macOS
+# ─────────────────────────────────────────────────────────────
 Pods/
-Podfile.lock
 ios/Flutter/.last_build_id
 ios/.generated
-ios/Flutter/Flutter.podspec
-
-# Xcode 빌드 결과물
+macos/.generated
 *.xcworkspace
 *.xcuserstate
-*.xcuserdata
-
-# Xcode 중간 파일
 DerivedData/
+# CocoaPods・Xcode 중간 결과
 *.ipa
-*.dSYM.zip
-*.dSYM
+*.dSYM*
+# Firebase 구성 (Secret Scanning 경고 회피)
+ios/Runner/GoogleService-Info.plist
+macos/Runner/GoogleService-Info.plist
 
-# 기타
-*.mode1v3
-*.mode2v3
-*.pbxuser
-
-#----------------------------------------------
-# Android 관련
-#----------------------------------------------
-/android/.gradle
-/android/.idea
-/android/app/debug.keystore
-/android/local.properties
-*.jks
+# ─────────────────────────────────────────────────────────────
+#  Android
+# ─────────────────────────────────────────────────────────────
+android/.gradle/
+android/.idea/
+android/local.properties
 *.keystore
+*.jks
+# Firebase 구성 (Secret Scanning 경고 회피)
+android/app/google-services.json
 
-#----------------------------------------------
-# macOS 관련
-#----------------------------------------------
-# macOS에서 자동 생성되는 메타파일
-.DS_Store
-.Spotlight-V100
-.Trashes
-.DS_Store?
-._*
+# ─────────────────────────────────────────────────────────────
+#  Windows / Linux 데스크톱
+# ─────────────────────────────────────────────────────────────
+linux/flutter/ephemeral/
+windows/flutter/ephemeral/
 
-#----------------------------------------------
-# VSCode / IntelliJ / 기타 IDE 설정
-#----------------------------------------------
+# ─────────────────────────────────────────────────────────────
+#  환경변수 / 시크릿
+# ─────────────────────────────────────────────────────────────
+.env
+.env.*
+# FirebaseOptions (CLI 생성 — 공개 가능하지만 경고 회피용)
+lib/firebase_options.dart
+
+# ─────────────────────────────────────────────────────────────
+#  IDE 설정
+# ─────────────────────────────────────────────────────────────
 .vscode/
 .idea/
 *.iml
-*.ipr
-*.iws
 
-#----------------------------------------------
-# 기타 (로그, 임시 파일 등)
-#----------------------------------------------
-*.log
-*.tmp
-*.temp
-*.swp
-*.lock
+# ─────────────────────────────────────────────────────────────
+#  macOS 시스템 파일
+# ─────────────────────────────────────────────────────────────
+.DS_Store
+.Spotlight-V100
+.Trashes
