@@ -4,20 +4,20 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'router.dart';
 import 'providers/auth_provider.dart';
+import 'firebase_options.dart'; 
+import 'core/app_theme.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  // TODO: Firebase 옵션 설정 (예: FirebaseOptions) 또는 환경설정 파일 연결
-
-  // Firebase Auth 현재 사용자 확인하여 초기 라우트 결정
-  User? currentUser = FirebaseAuth.instance.currentUser;
-  String? initialRoute =  currentUser != null ? AppRoutes.home : AppRoutes.login;
   
-  runApp(
-    // Riverpod의 ProviderScope로 앱 전체를 감쌉니다.
-    ProviderScope(child: MyApp(initialRoute: initialRoute)),
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  final user = FirebaseAuth.instance.currentUser;
+  final String initRoute = user == null ? AppRoutes.login : AppRoutes.home;
+
+  runApp(ProviderScope(child: MyApp(initialRoute: initRoute)));
 }
 
 class MyApp extends StatelessWidget {
@@ -28,10 +28,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      title: 'KaKao Clone Chat',
+      theme: AppTheme.theme(),
       debugShowCheckedModeBanner: false,
       initialRoute: initialRoute,
       onGenerateRoute: AppRouter.generateRoute,
